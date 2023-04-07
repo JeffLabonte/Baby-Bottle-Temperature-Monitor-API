@@ -1,0 +1,19 @@
+parameters: {}
+environment: {}
+packages:
+    - name: baby-bottle-api
+      shared: false
+      environment: {}
+      parameters: {}
+      annotations: {}
+      functions:
+        - name: api
+          binary: false
+          main: ""
+          runtime: python:default
+          web: true
+          webSecure: false
+          parameters: {}
+          environment: {}
+          annotations: {}
+          limits: {}
