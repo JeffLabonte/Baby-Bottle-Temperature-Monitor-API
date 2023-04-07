@@ -1,5 +1,6 @@
 parameters: {}
-environment: {}
+environment: 
+  DATABASE_CONNECTION_STRING: ${DATABASE_CONNECTION_STRING}
 packages:
     - name: baby-bottle-api
       shared: false
