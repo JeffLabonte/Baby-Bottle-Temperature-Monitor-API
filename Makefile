@@ -5,6 +5,7 @@ PACKAGE_API="packages/baby-bottle-api/api"
 venv:
 	python3 -m venv .venv --clear
 	.venv/bin/pip install --upgrade pip -r ${PACKAGE_API}/requirements.txt
+	.venv/bin/pip install -r requirements.dev.txt
 
 run:
 	.venv/bin/python ${PACKAGE_API}

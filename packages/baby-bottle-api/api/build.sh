@@ -2,7 +2,7 @@
 
 set -e 
 
-python3 -m venv --clear venv 
-source venv/bin/activate
+virtualenv virtualenv
+source virtualenv/bin/activate
 pip install -r requirements.txt
-
+deactivate
