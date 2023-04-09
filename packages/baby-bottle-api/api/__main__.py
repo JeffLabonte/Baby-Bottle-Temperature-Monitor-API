@@ -42,10 +42,27 @@ def handle_post(event, _):
     }
 
 
+def handle_get():
+    client = get_database_connection()
+    database = client.baby_bottle
+    temperature_collection = database.temperature
+    temperature = temperature_collection.find().sort("recorded_at", -1).limit(1)
+    return {
+        "body": {
+            "temperature": float(temperature[0].get("temperature_in_celcius", 0)),
+        },
+        "statusCode": 200,
+    }
+
+
 def main(event, context):
     method = event.get("http", {}).get("method", "")
     if method == "POST":
         return handle_post(event, context)
+
+    if method == "GET":
+        return handle_get()
+
     return {
         "body": {
             "response": "This method is not supported",
